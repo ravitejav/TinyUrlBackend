@@ -20,6 +20,10 @@ public class User {
 	private String password;
 	private String name;
 	
+	public User() {
+		
+	}
+	
 	public User(Integer id, String userName, String password, String name) {
 		super();
 		this.id = id;

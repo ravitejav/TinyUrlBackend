@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.proj.tinyUrl.MessageConstants;
+import com.proj.tinyUrl.constant.MessageConstants;
 import com.proj.tinyUrl.entites.User;
 import com.proj.tinyUrl.models.Response;
 import com.proj.tinyUrl.repository.UserRepository;

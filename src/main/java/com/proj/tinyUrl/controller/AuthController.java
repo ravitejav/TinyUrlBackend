@@ -31,12 +31,6 @@ public class AuthController {
 	@RequestMapping(value = "/auth", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthToken(@RequestBody User user) throws Exception {
 		
-		try {
-			authManger.authenticate(new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword()));			
-		} catch (BadCredentialsException e) {
-			throw new Exception("Invalid Username and password");
-		}
-		
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUserName());
 		final String jwt = jwtUtil.generateToken(userDetails);
 		

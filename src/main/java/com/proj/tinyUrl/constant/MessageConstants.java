@@ -1,4 +1,4 @@
-package com.proj.tinyUrl;
+package com.proj.tinyUrl.constant;
 
 public final class MessageConstants {
 	
