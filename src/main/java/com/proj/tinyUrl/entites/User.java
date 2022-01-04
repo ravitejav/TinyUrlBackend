@@ -1,10 +1,15 @@
 package com.proj.tinyUrl.entites;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -19,6 +24,10 @@ public class User {
 	private String userName;
 	private String password;
 	private String name;
+	
+	@OneToMany(mappedBy="requestedBy")
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	List<Url> urls;
 	
 	public User() {
 		
